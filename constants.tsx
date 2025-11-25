@@ -1,4 +1,5 @@
 
+
 import { 
   Globe, 
   Share2, 
@@ -32,8 +33,6 @@ export const IMAGES = {
   smartSecretary: {
     // IMAGEM 1 (FIXA/OFICIAL) - USAR SOMENTE NA HOME PAGE
     home: 'https://i.ibb.co/gMBSVYXr/secertaria-smart-lp.png',
-    // IMAGEM 2 (FIXA/OFICIAL) - USAR SOMENTE NA LANDING PAGE DE SERVIÇO
-    lp: 'https://i.ibb.co/gMhn8FcF/avatar-Secretaria-Smart-lp.png'
   },
   services: {
     website: 'https://i.ibb.co/CKDbDZJC/service-website.png',

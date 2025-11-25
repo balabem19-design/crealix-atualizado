@@ -13,46 +13,9 @@ import Cases from './components/Cases';
 import Contact from './components/Contact';
 import Stats from './components/Stats';
 import SmartSecretary from './components/SmartSecretary';
-import SmartSecretaryLP from './components/SmartSecretaryLP';
 import { ViewState } from './types';
-import { IMAGES } from './constants';
-
-// Preloader Component
-const Preloader = ({ onFinish }: { onFinish: () => void }) => {
-  const [isExiting, setIsExiting] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsExiting(true);
-      setTimeout(onFinish, 500); // Wait for exit animation
-    }, 2500); // Minimum load time matches rotation
-    return () => clearTimeout(timer);
-  }, [onFinish]);
-
-  return (
-    <div 
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0A0A0F] transition-all duration-500 ${isExiting ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100'}`}
-    >
-      <div className="relative w-32 h-32 mb-8">
-        {/* Pulsing Glow behind Cube */}
-        <div className="absolute inset-0 bg-gradient-to-r from-crealix-pink via-crealix-purple to-crealix-blue rounded-full blur-2xl opacity-40 animate-pulse-slow"></div>
-        
-        {/* Rotating Cube */}
-        <img 
-          src={IMAGES.cube} 
-          alt="Loading..." 
-          className="w-full h-full object-contain animate-[spin_2.5s_linear_infinite] relative z-10 drop-shadow-[0_0_20px_rgba(122,0,255,0.5)]" 
-        />
-      </div>
-      <h2 className="text-white font-display font-bold text-lg tracking-[0.3em] animate-fade-in">
-        CARREGANDO...
-      </h2>
-    </div>
-  );
-};
 
 function App() {
-  const [loading, setLoading] = useState(true);
   const [currentView, setCurrentView] = useState<ViewState>('home');
   const [targetServiceId, setTargetServiceId] = useState<string | undefined>(undefined);
   
@@ -61,10 +24,10 @@ function App() {
 
   // Scroll to top on view change (unless we are targeting a specific ID)
   useEffect(() => {
-    if (!targetServiceId && !loading) {
+    if (!targetServiceId) {
       window.scrollTo(0, 0);
     }
-  }, [currentView, targetServiceId, loading]);
+  }, [currentView, targetServiceId]);
 
   const handleServiceNavigation = (serviceId: string) => {
     setIsTransitioning(true);
@@ -102,8 +65,6 @@ function App() {
         return <Cases />;
       case 'contact':
         return <Contact />;
-      case 'smart-secretary':
-        return <SmartSecretaryLP onBack={() => handleNavNavigate('home')} />;
       case 'home':
       default:
         return (
@@ -111,7 +72,7 @@ function App() {
             <Hero onCtaClick={() => handleNavNavigate('contact')} />
             <Stats />
             <Features />
-            <SmartSecretary onNavigate={handleNavNavigate} />
+            <SmartSecretary />
             <Services onServiceClick={handleServiceNavigation} />
             <Companies />
             <Testimonials />
@@ -123,31 +84,17 @@ function App() {
   };
 
   return (
-    <>
-      {loading && <Preloader onFinish={() => setLoading(false)} />}
-      
-      <div className={`min-h-screen bg-[#0A0A0F] text-white selection:bg-crealix-pink selection:text-white ${loading ? 'h-screen overflow-hidden' : ''}`}>
-        {!loading && (
-          <>
-            {/* Conditional Navbar: Hide standard navbar on exclusive LP, or keep it. 
-                Prompt says "Landing page exclusiva". Usually standard nav is removed or simplified. 
-                I will hide the main navbar for the LP view to focus on conversion. */}
-            {currentView !== 'smart-secretary' && (
-               <Navbar onNavigate={handleNavNavigate} currentView={currentView} />
-            )}
-            
-            <main className={`transition-all duration-300 transform ${isTransitioning ? 'opacity-0 blur-sm scale-[0.98]' : 'opacity-100 blur-0 scale-100 animate-slide-up'}`}>
-              {renderView()}
-            </main>
-            
-            {/* Keep footer only if not on LP, as LP has its own footer/CTA section? 
-                Prompt implies a "CTA Final" section. Standard footer might distract. 
-                I will hide standard footer for LP. */}
-            {currentView !== 'smart-secretary' && <Footer />}
-          </>
-        )}
-      </div>
-    </>
+    <div className={`min-h-screen bg-[#0A0A0F] text-white selection:bg-crealix-pink selection:text-white`}>
+      <>
+        <Navbar onNavigate={handleNavNavigate} currentView={currentView} />
+        
+        <main className={`transition-all duration-300 transform ${isTransitioning ? 'opacity-0 blur-sm scale-[0.98]' : 'opacity-100 blur-0 scale-100 animate-slide-up'}`}>
+          {renderView()}
+        </main>
+        
+        <Footer />
+      </>
+    </div>
   );
 }
 

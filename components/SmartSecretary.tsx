@@ -1,14 +1,16 @@
 
+
 import React from 'react';
 import { Bot, CheckCircle2, CalendarClock, Zap, ArrowRight } from 'lucide-react';
 import { ViewState } from '../types';
-import { IMAGES } from '../constants';
+import { IMAGES, CONTACT_INFO } from '../constants';
 
-interface SmartSecretaryProps {
-  onNavigate: (view: ViewState) => void;
-}
+const SmartSecretary: React.FC = () => {
+  const handleCtaClick = () => {
+    const msg = encodeURIComponent("Olá! Tenho interesse na Secretária Smart e gostaria de saber mais.");
+    window.open(`https://api.whatsapp.com/send?phone=${CONTACT_INFO.whatsapp}&text=${msg}`, '_blank');
+  };
 
-const SmartSecretary: React.FC<SmartSecretaryProps> = ({ onNavigate }) => {
   return (
     <section id="smart-secretary" className="py-24 bg-[#0A0A0F] relative overflow-hidden">
       {/* Background Ambience - Focused on Cyan/White for the 'Clean Tech' look */}
@@ -104,7 +106,7 @@ const SmartSecretary: React.FC<SmartSecretaryProps> = ({ onNavigate }) => {
             </div>
 
             <button 
-              onClick={() => onNavigate('smart-secretary')}
+              onClick={handleCtaClick}
               className="group relative bg-white text-[#0A0A0F] px-8 py-4 rounded-lg font-bold text-lg shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(6,182,212,0.4)] transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden mx-auto lg:mx-0 w-full md:w-auto hover:scale-105"
             >
                <Bot size={24} className="text-cyan-600 group-hover:rotate-12 transition-transform" />
