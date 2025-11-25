@@ -1,6 +1,6 @@
 import { LucideIcon } from 'lucide-react';
 
-export type ViewState = 'home' | 'services' | 'cases' | 'contact';
+export type ViewState = 'home' | 'services' | 'cases' | 'contact' | 'smart-secretary-lp';
 
 export interface Service {
   id: string;

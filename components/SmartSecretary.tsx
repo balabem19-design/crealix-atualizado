@@ -1,14 +1,16 @@
-
-
 import React from 'react';
 import { Bot, CheckCircle2, CalendarClock, Zap, ArrowRight } from 'lucide-react';
 import { ViewState } from '../types';
-import { IMAGES, CONTACT_INFO } from '../constants';
+import { IMAGES } from '../constants';
 
-const SmartSecretary: React.FC = () => {
+interface SmartSecretaryProps {
+  onNavigate: (view: ViewState) => void;
+}
+
+const SmartSecretary: React.FC<SmartSecretaryProps> = ({ onNavigate }) => {
+
   const handleCtaClick = () => {
-    const msg = encodeURIComponent("Olá! Tenho interesse na Secretária Smart e gostaria de saber mais.");
-    window.open(`https://api.whatsapp.com/send?phone=${CONTACT_INFO.whatsapp}&text=${msg}`, '_blank');
+    onNavigate('smart-secretary-lp');
   };
 
   return (
@@ -98,7 +100,7 @@ const SmartSecretary: React.FC = () => {
 
             <div className="glass-panel bg-gradient-to-b from-white/5 to-transparent p-6 md:p-8 rounded-2xl border border-white/10 mb-8 relative group hover:border-cyan-500/30 transition-colors duration-500">
                 <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                  A Secretária Smart é a agente de IA da Crealix. Ela realiza agendamentos, suporte, vendas, atendimento ao cliente, triagem inteligente, follow-up automático e qualificação de leads, tudo em tempo real. Ela conversa com naturalidade, entende intenções e conduz seu cliente até onde ele precisa — como uma secretária e um vendedor trabalhando juntos, 24h por dia.
+                  A Secretária Smart é a agente de IA da Crealix. Ela realiza agendamentos, suporte, vendas, atendimento ao cliente, triagem inteligente, follow-up automático e qualificação de leads, tudo em tempo real.
                 </p>
                 {/* Decorative corners */}
                 <div className="absolute -top-[1px] -left-[1px] w-4 h-4 border-t-2 border-l-2 border-cyan-500/50 rounded-tl-lg group-hover:w-8 group-hover:h-8 transition-all duration-500"></div>
@@ -110,7 +112,7 @@ const SmartSecretary: React.FC = () => {
               className="group relative bg-white text-[#0A0A0F] px-8 py-4 rounded-lg font-bold text-lg shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_50px_rgba(6,182,212,0.4)] transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden mx-auto lg:mx-0 w-full md:w-auto hover:scale-105"
             >
                <Bot size={24} className="text-cyan-600 group-hover:rotate-12 transition-transform" />
-               <span className="relative z-10">Quero minha Secretária Smart</span>
+               <span className="relative z-10">Conhecer a Secretária Smart</span>
                <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-100/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
             </button>

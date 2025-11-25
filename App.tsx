@@ -13,6 +13,7 @@ import Cases from './components/Cases';
 import Contact from './components/Contact';
 import Stats from './components/Stats';
 import SmartSecretary from './components/SmartSecretary';
+import SmartSecretaryLP from './components/SmartSecretaryLP';
 import { ViewState } from './types';
 
 function App() {
@@ -28,6 +29,14 @@ function App() {
       window.scrollTo(0, 0);
     }
   }, [currentView, targetServiceId]);
+
+  useEffect(() => {
+    if (currentView === 'smart-secretary-lp') {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [currentView]);
 
   const handleServiceNavigation = (serviceId: string) => {
     setIsTransitioning(true);
@@ -52,48 +61,47 @@ function App() {
     }, 300); // Match fade-out duration
   };
 
+  const renderHome = () => (
+    <>
+      <Hero onCtaClick={() => handleNavNavigate('contact')} />
+      <Stats />
+      <Features />
+      <SmartSecretary onNavigate={handleNavNavigate} />
+      <Services onServiceClick={handleServiceNavigation} />
+      <Companies />
+      <Testimonials />
+      <Pricing />
+      <CallToAction onContactClick={() => handleNavNavigate('contact')} />
+    </>
+  );
+
   const renderView = () => {
     switch (currentView) {
       case 'services':
-        return (
-           <ServiceDetail 
-              targetId={targetServiceId} 
-              onContact={() => handleNavNavigate('contact')} 
-           />
-        );
+        return <ServiceDetail targetId={targetServiceId} onContact={() => handleNavNavigate('contact')} />;
       case 'cases':
         return <Cases />;
       case 'contact':
         return <Contact />;
       case 'home':
       default:
-        return (
-          <>
-            <Hero onCtaClick={() => handleNavNavigate('contact')} />
-            <Stats />
-            <Features />
-            <SmartSecretary />
-            <Services onServiceClick={handleServiceNavigation} />
-            <Companies />
-            <Testimonials />
-            <Pricing />
-            <CallToAction onContactClick={() => handleNavNavigate('contact')} />
-          </>
-        );
+        return renderHome();
     }
   };
 
   return (
     <div className={`min-h-screen bg-[#0A0A0F] text-white selection:bg-crealix-pink selection:text-white`}>
-      <>
-        <Navbar onNavigate={handleNavNavigate} currentView={currentView} />
-        
-        <main className={`transition-all duration-300 transform ${isTransitioning ? 'opacity-0 blur-sm scale-[0.98]' : 'opacity-100 blur-0 scale-100 animate-slide-up'}`}>
-          {renderView()}
-        </main>
-        
-        <Footer />
-      </>
+      <Navbar onNavigate={handleNavNavigate} currentView={currentView} />
+      
+      <main className={`transition-all duration-300 transform ${isTransitioning ? 'opacity-0 blur-sm scale-[0.98]' : 'opacity-100 blur-0 scale-100 animate-slide-up'}`}>
+        {renderView()}
+      </main>
+      
+      <Footer />
+      
+      {currentView === 'smart-secretary-lp' && (
+        <SmartSecretaryLP onClose={() => handleNavNavigate('home')} />
+      )}
     </div>
   );
 }
