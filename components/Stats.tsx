@@ -45,13 +45,16 @@ const Stats: React.FC = () => {
 const AnimatedStat: React.FC<{ stat: any; isVisible: boolean; index: number }> = ({ stat, isVisible, index }) => {
   const [count, setCount] = useState(0);
   
-  // Extract number and suffix/prefix
-  const targetString = stat.value; // e.g. "150+" or "15M+"
-  const numericValue = parseInt(targetString.replace(/\D/g, '')); // 150
-  const suffix = targetString.replace(/[0-9]/g, ''); // "+" or "M+"
+  const targetString = stat.value;
+  // Fix for 24/7: Check if string contains '/' which implies it's not a standard countable number
+  const isStatic = targetString.toString().includes('/');
+  
+  // Only parse numbers if it's not a static string format
+  const numericValue = isStatic ? 0 : parseInt(targetString.replace(/\D/g, ''));
+  const suffix = isStatic ? '' : targetString.replace(/[0-9]/g, '');
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || isStatic) return;
 
     let start = 0;
     const end = numericValue;
@@ -73,7 +76,7 @@ const AnimatedStat: React.FC<{ stat: any; isVisible: boolean; index: number }> =
     }, timerDuration);
 
     return () => clearInterval(timer);
-  }, [isVisible, numericValue]);
+  }, [isVisible, numericValue, isStatic]);
 
   return (
     <div className="text-center group p-4 rounded-xl hover:bg-white/5 transition-colors duration-300">
@@ -82,7 +85,7 @@ const AnimatedStat: React.FC<{ stat: any; isVisible: boolean; index: number }> =
          <stat.icon className="text-crealix-blue group-hover:text-crealix-pink transition-colors duration-300 relative z-10" size={36} />
       </div>
       <div className="text-3xl md:text-5xl font-display font-black text-white mb-2 tracking-tight">
-        {isVisible ? count : 0}{suffix}
+        {isStatic ? targetString : `${isVisible ? count : 0}${suffix}`}
       </div>
       <div className="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-widest group-hover:text-white transition-colors">
         {stat.label}

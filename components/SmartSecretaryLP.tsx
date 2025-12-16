@@ -6,12 +6,12 @@ interface SmartSecretaryLPProps {
   onClose: () => void;
 }
 
-// Official High-Ticket Images (Generated)
+// Official High-Ticket Images (Generated & Fixed)
 const LP_IMAGES = {
-    hero: "https://i.ibb.co/6gS0g7j/crealix-lp-highticket-hero.png",
-    vehicle: "https://i.ibb.co/qB3t2Jg/crealix-lp-highticket-vehicle.png",
-    process: "https://i.ibb.co/L5w2z3g/crealix-lp-highticket-process.png",
-    cta: "https://i.ibb.co/P9P46F3/crealix-lp-highticket-cta.png"
+    hero: "https://i.ibb.co/XYd7c0S/crealix-lp-highticket-hero.png",
+    vehicle: "https://i.ibb.co/rvWjdc1/crealix-lp-highticket-vehicle.png",
+    process: "https://i.ibb.co/k3P5jmd/crealix-lp-highticket-process.png",
+    cta: "https://i.ibb.co/VWVf60y/crealix-lp-highticket-cta.png"
 };
 
 const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
@@ -111,7 +111,7 @@ const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
               <Step number="2" title="Implementação Premium" description="Configuramos e integramos a Secretária Smart em seus canais." />
               <Step number="3" title="Ativação e Performance" description="Sua IA começa a vender e atender, com otimização contínua." />
             </div>
-            <img src={LP_IMAGES.process} alt="SaaS Interface" className="mt-12 rounded-lg shadow-lg"/>
+            <img src={LP_IMAGES.process} alt="SaaS Interface" className="mt-12 rounded-lg shadow-lg" id="demo"/>
           </section>
 
           {/* 7. SOCIAL PROOF */}

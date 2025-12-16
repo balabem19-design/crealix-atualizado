@@ -318,7 +318,7 @@ export const CASES: CaseStudy[] = [
 
 export const STATS = [
   {
-    value: '150+',
+    value: '50+',
     label: 'Projetos Entregues',
     icon: Rocket
   },
