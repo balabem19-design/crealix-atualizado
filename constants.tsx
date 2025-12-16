@@ -32,7 +32,7 @@ export const IMAGES = {
   robot: 'https://i.ibb.co/b5rtrGDM/robo-crealix-fundo-transparente.png',
   smartSecretary: {
     // IMAGEM 1 (FIXA/OFICIAL) - USAR SOMENTE NA HOME PAGE
-    home: 'https://i.ibb.co/gMBSVYXr/secertaria-smart-lp.png',
+    home: 'https://i.ibb.co/HfBw9DhH/avatar-Secretaria-Smart-1024x919.webp',
   },
   services: {
     website: 'https://i.ibb.co/CKDbDZJC/service-website.png',

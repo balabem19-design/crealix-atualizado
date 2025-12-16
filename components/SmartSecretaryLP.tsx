@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import { Check, X, ArrowRight, MessageCircle, Star, Zap, Bot, Calendar, TrendingUp } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
@@ -8,7 +10,7 @@ interface SmartSecretaryLPProps {
 
 // Official High-Ticket Images (Generated & Fixed)
 const LP_IMAGES = {
-    hero: "https://i.ibb.co/XYd7c0S/crealix-lp-highticket-hero.png",
+    hero: "https://i.ibb.co/HfBw9DhH/avatar-Secretaria-Smart-1024x919.webp",
     vehicle: "https://i.ibb.co/rvWjdc1/crealix-lp-highticket-vehicle.png",
     process: "https://i.ibb.co/k3P5jmd/crealix-lp-highticket-process.png",
     cta: "https://i.ibb.co/VWVf60y/crealix-lp-highticket-cta.png"
@@ -38,18 +40,29 @@ const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
         </button>
 
         {/* 1. HERO (Big Money Statement) */}
-        <header className="relative py-24 px-8 text-center bg-[#0A0A0A] border-b border-purple-500/10">
+        <header className="relative py-24 px-8 text-center bg-[#0A0A0A] border-b border-purple-500/10 overflow-hidden">
           <div className="absolute inset-0 w-full h-full bg-grid-pattern opacity-5"></div>
           <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-[#0A0A0A] z-10"></div>
           
-          <div className="relative z-20">
-            <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6 leading-tight max-w-4xl mx-auto">
-              Transforme cada mensagem em lucro com sua <span className="text-gradient">Secretária de IA</span> treinada pessoalmente para vender como um humano.
+          <div className="relative z-20 flex flex-col items-center">
+            <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6 leading-tight max-w-4xl mx-auto drop-shadow-2xl">
+              Transforme cada mensagem em lucro com sua 
+              
+              <div className="relative w-full max-w-[300px] md:max-w-[400px] mx-auto my-6 animate-float">
+                 <div className="absolute inset-0 bg-gradient-to-t from-crealix-purple/20 to-transparent blur-xl rounded-full"></div>
+                 <img 
+                    src={LP_IMAGES.hero} 
+                    alt="Secretária Smart" 
+                    className="relative w-full h-auto object-contain drop-shadow-[0_0_40px_rgba(122,0,255,0.4)]"
+                 />
+              </div>
+
+              treinada pessoalmente para vender como um humano.
             </h1>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-10">
               Atenda, responda e converta clientes automaticamente 24h por dia com tecnologia premium desenvolvida pela Crealix.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <button onClick={() => handleCta("Quero ativar minha Secretária Smart High Performance!")} className="bg-crealix-purple text-white font-bold py-4 px-8 rounded-lg hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(122,0,255,0.4)]">
                 👉 Ativar Secretária Smart High Performance
               </button>
