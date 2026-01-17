@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { PRICING_PLANS, CONTACT_INFO } from '../constants';
 import { Check, Sparkles, Zap } from 'lucide-react';
@@ -10,14 +11,12 @@ const Pricing: React.FC = () => {
 
   const getPlanStyles = (name: string, isPopular?: boolean) => {
     switch (name) {
-      case 'START':
+      case 'Start Up':
         return 'bg-[#08080a] border-white/10 animate-breathe hover:animate-none hover:scale-105 hover:border-[#00D4FF]/50 hover:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-all duration-[300ms]';
-      case 'BASIC':
-        return 'bg-[#08080a] border-white/10 animate-breathe hover:animate-none hover:scale-105 hover:border-[#7A00FF]/50 hover:shadow-[0_0_30px_rgba(122,0,255,0.3)] transition-all duration-[300ms]';
-      case 'PRO':
+      case 'Traction AI':
         return 'bg-[#0c0c12] border-transparent ring-1 ring-pink-500/50 shadow-[0_0_40px_rgba(236,72,153,0.15)] hover:scale-[1.05] hover:shadow-[0_0_60px_rgba(236,72,153,0.6)] transition-all duration-[250ms] z-10 lg:-translate-y-4 hover:animate-vibrate';
-      case 'ADVANCED':
-        return 'bg-[#08080a] border-white/10 animate-breathe hover:animate-none hover:scale-[1.06] hover:border-[#FF00D4]/50 hover:shadow-[0_0_30px_rgba(255,0,212,0.3)] transition-all duration-[300ms]';
+      case 'Scale Pro':
+        return 'bg-[#08080a] border-white/10 animate-breathe hover:animate-none hover:scale-[1.06] hover:border-[#7A00FF]/50 hover:shadow-[0_0_30px_rgba(122,0,255,0.3)] transition-all duration-[300ms]';
       default:
         return 'bg-[#08080a] border-white/10 animate-breathe hover:animate-none hover:scale-105';
     }
@@ -30,20 +29,20 @@ const Pricing: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-display font-black mb-4 text-white">
-            ESCOLHA SEU <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500">PLANO</span>
+          <h2 className="text-4xl md:text-6xl font-display font-black mb-4 text-white uppercase">
+            ACELERE SEU NEGÓCIO COM A <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500">INTELIGÊNCIA CERTA</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Comece no seu ritmo. Para resultados consistentes, escolha o PRO.
+            Do básico bem feito à escala total. Estratégias desenhadas para cada estágio do seu crescimento.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-end">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 lg:items-end max-w-6xl mx-auto">
           {PRICING_PLANS.map((plan, index) => (
             <div 
               key={index} 
               className={`
-                relative p-6 rounded-2xl border flex flex-col cursor-pointer group h-full overflow-hidden
+                relative p-8 rounded-2xl border flex flex-col cursor-pointer group h-full overflow-hidden
                 ${getPlanStyles(plan.name, plan.isPopular)}
               `}
               onClick={() => handleSubscribe(plan.name)}
@@ -68,8 +67,8 @@ const Pricing: React.FC = () => {
                    <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1 whitespace-nowrap border border-white/10">
                       <Sparkles size={10} fill="currentColor" />
                       <div className="flex flex-col items-center leading-none">
-                         <span>Mais</span>
-                         <span>Popular</span>
+                         <span>Melhor</span>
+                         <span>Custo-Benefício</span>
                       </div>
                    </div>
                 </div>
@@ -77,13 +76,15 @@ const Pricing: React.FC = () => {
 
               <div className="mb-6 mt-2 relative z-10">
                 <h3 className="text-xl font-bold mb-2 text-white tracking-wide group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">{plan.name}</h3>
+                
                 <div className="flex items-baseline gap-1 mb-4">
-                  <span className={`text-4xl font-black ${plan.isPopular ? 'text-pink-500' : 'text-purple-600'}`}>
+                  <span className={`font-black ${plan.isPopular ? 'text-pink-500' : 'text-purple-600'} ${plan.price === 'Sob Consulta' ? 'text-2xl' : 'text-4xl'}`}>
                     {plan.price}
                   </span>
-                  <span className="text-gray-500 text-xs font-medium">/mês</span>
+                  {plan.price !== 'Sob Consulta' && <span className="text-gray-500 text-xs font-medium">/mês</span>}
                 </div>
-                <p className="text-gray-400 text-xs leading-relaxed min-h-[48px]">
+                
+                <p className="text-gray-400 text-sm leading-relaxed min-h-[60px]">
                   {plan.description}
                 </p>
                 
@@ -98,7 +99,7 @@ const Pricing: React.FC = () => {
                  <div className="bg-pink-500/5 border border-pink-500/20 rounded-lg p-3 mb-6">
                     <p className="text-[10px] text-pink-400 font-semibold leading-tight flex gap-2 items-start">
                       <Zap size={12} className="shrink-0 mt-0.5" />
-                      A maioria dos clientes escolhe o PRO pelo melhor custo-benefício
+                      A escolha inteligente para quem quer vender mais rápido.
                     </p>
                  </div>
               )}
@@ -107,9 +108,9 @@ const Pricing: React.FC = () => {
 
               <ul className="space-y-4 mb-8 flex-grow relative z-10">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-xs text-gray-300 leading-snug">
+                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-300 leading-snug">
                     <div className={`mt-0.5 p-0.5 rounded-full shrink-0 ${plan.isPopular ? 'text-pink-500' : 'text-blue-500'}`}>
-                      <Check size={12} strokeWidth={3} />
+                      <Check size={14} strokeWidth={3} />
                     </div>
                     <span>{feature}</span>
                   </li>
@@ -118,14 +119,14 @@ const Pricing: React.FC = () => {
 
               <button 
                 className={`
-                  w-full py-3.5 rounded-lg font-bold text-sm transition-all duration-300 mt-auto relative overflow-hidden z-10 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]
+                  w-full py-4 rounded-lg font-bold text-sm transition-all duration-300 mt-auto relative overflow-hidden z-10 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] uppercase tracking-wide
                   ${plan.isPopular 
                     ? 'bg-gradient-to-r from-pink-600 to-purple-600 text-white shadow-lg hover:shadow-pink-500/25' 
-                    : 'bg-blue-600/90 hover:bg-blue-600 text-white shadow-lg shadow-blue-900/20'
+                    : 'bg-white/5 hover:bg-white/10 border border-white/10 text-white shadow-lg'
                   }
                 `}
               >
-                <span className="relative z-10">{plan.isPopular ? '🚀 Quero o PRO' : 'Contratar'}</span>
+                <span className="relative z-10">{plan.ctaText || 'Contratar'}</span>
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_linear_infinite]"></div>
               </button>
             </div>
@@ -133,7 +134,7 @@ const Pricing: React.FC = () => {
         </div>
         
         <div className="text-center mt-16 text-gray-500 text-xs font-medium">
-          Planos mensais. Valores não incluem verba de mídia.
+          Valores referentes à gestão estratégica. Investimento em mídia (anúncios) pago separadamente às plataformas.
         </div>
       </div>
     </section>

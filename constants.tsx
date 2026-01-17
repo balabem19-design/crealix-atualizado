@@ -1,5 +1,4 @@
 
-
 import { 
   Globe, 
   Share2, 
@@ -18,8 +17,8 @@ import { Service, PricingPlan, Testimonial, Feature, CaseStudy } from './types';
 
 // Contact Info
 export const CONTACT_INFO = {
-  whatsapp: '5541988386087',
-  whatsappDisplay: '(41) 98838-6087',
+  whatsapp: '5541988920031',
+  whatsappDisplay: '(41) 98892-0031',
   email: 'contato@crealixmarketing.com',
   instagram: 'https://www.instagram.com/crealix.marketing/'
 };
@@ -32,7 +31,7 @@ export const IMAGES = {
   robot: 'https://i.ibb.co/b5rtrGDM/robo-crealix-fundo-transparente.png',
   smartSecretary: {
     // IMAGEM 1 (FIXA/OFICIAL) - USAR SOMENTE NA HOME PAGE
-    home: 'https://i.ibb.co/HfBw9DhH/avatar-Secretaria-Smart-1024x919.webp',
+    home: 'https://i.ibb.co/gMBSVYXr/secertaria-smart-lp.png',
   },
   services: {
     website: 'https://i.ibb.co/CKDbDZJC/service-website.png',
@@ -157,86 +156,117 @@ export const FEATURES: Feature[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
+    name: 'Ricardo Silva',
+    role: 'CEO E-commerce',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
+    date: 'Sexta-feira',
+    conversation: [
+      { from: 'me', text: 'Ricardo, bom dia! Aumentamos a carga nos servidores pra aguentar o pico da campanha.', time: '09:10' },
+      { from: 'me', text: 'Como tá o fluxo de vendas aí?', time: '09:11' },
+      { from: 'them', text: 'Fala pessoal! Passando pra agradecer.', time: '10:42' },
+      { from: 'them', text: 'A automação tá segurando toda a demanda. Minha equipe de vendas tá focada só em fechar, surreal o resultado. 🚀', time: '10:43' }
+    ]
+  },
+  {
+    name: 'Camila Fernandes',
+    role: 'Diretora Clínica Estética',
+    avatarUrl: 'https://randomuser.me/api/portraits/women/65.jpg',
+    date: 'Ontem',
+    conversation: [
+      { from: 'me', text: 'Camila, acabamos de subir a escala das campanhas. Sentiu diferença nos agendamentos?', time: '14:20' },
+      { from: 'them', text: 'Oie! Menino do céu... espera que eu tô respirando aqui kkk', time: '14:32' },
+      { from: 'them', text: 'Batemos a meta do mês em 15 dias! 😱', time: '14:33' },
+      { from: 'them', text: 'O design dos anúncios ficou perfeito, atraiu o público certo. Gratidão! 🙏', time: '14:35' }
+    ]
+  },
+  {
     name: 'Maria Lopes',
     role: 'Empreendedora',
-    content: 'A Crealix revolucionou nosso digital. Atendimento impecável e resultado visível.',
-    avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg'
+    avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
+    date: '15 de Outubro',
+    conversation: [
+      { from: 'me', text: 'Maria, o que achou da nova identidade visual no Instagram?', time: '09:00' },
+      { from: 'me', text: 'O feed novo já está no ar.', time: '09:01' },
+      { from: 'them', text: 'Gente, ficou incrível! 😍', time: '09:10' },
+      { from: 'them', text: 'Todo mundo elogiando aqui. A Crealix revolucionou nossa cara no digital, atendimento impecável.', time: '09:12' }
+    ]
   },
   {
     name: 'Eduardo Campos',
     role: 'Loja Virtual',
-    content: 'Automação e branding impecáveis. Meu faturamento dobrou em 2 meses.',
-    avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg'
+    avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+    date: 'Quarta-feira',
+    conversation: [
+      { from: 'me', text: 'Eduardo, o relatório de vendas fechou. Viu os números de conversão do bot?', time: '16:00' },
+      { from: 'them', text: 'Vi agora. Tô impressionado.', time: '16:10' },
+      { from: 'them', text: 'Branding e automação rodando liso... meu faturamento dobrou em 2 meses.', time: '16:15' },
+      { from: 'them', text: 'Vocês são feras! 👊', time: '16:16' }
+    ]
   },
   {
     name: 'Ana Ribeiro',
     role: 'Consultora',
-    content: 'Equipe criativa e ágil. Trabalho de alto nível.',
-    avatarUrl: 'https://randomuser.me/api/portraits/women/68.jpg'
+    avatarUrl: 'https://randomuser.me/api/portraits/women/68.jpg',
+    date: 'Segunda-feira',
+    conversation: [
+      { from: 'me', text: 'Ana, conseguimos entregar os criativos antes do prazo. Tudo certo pra subirmos?', time: '11:30' },
+      { from: 'them', text: 'Nossa, que rapidez!', time: '11:32' },
+      { from: 'them', text: 'Sim! Vocês são muito ágeis. Trabalho de alto nível, já aprovei tudo e já tá no ar. 😍', time: '11:35' }
+    ]
   },
   {
     name: 'Carlos Mendes',
     role: 'CEO Startup Tech',
-    content: 'O ROI das campanhas superou todas as expectativas. Profissionalismo total.',
-    avatarUrl: 'https://randomuser.me/api/portraits/men/22.jpg'
+    avatarUrl: 'https://randomuser.me/api/portraits/men/22.jpg',
+    date: '20 de Novembro',
+    conversation: [
+      { from: 'me', text: 'Carlos, como foi o ROI dessa semana com a estratégia nova?', time: '18:00' },
+      { from: 'them', text: 'Cara, tenho que admitir.', time: '18:02' },
+      { from: 'them', text: 'Superou todas as expectativas. O custo por lead caiu pela metade. 👏', time: '18:03' },
+      { from: 'them', text: 'Profissionalismo total de vocês. Vamos renovar o contrato.', time: '18:05' }
+    ]
   }
 ];
 
 export const PRICING_PLANS: PricingPlan[] = [
   {
-    name: 'START',
-    price: 'R$297',
-    description: 'Ideal para pequenos negócios iniciando no digital.',
-    minimumContract: '2 meses',
-    features: [
-      'Gestão básica de redes sociais',
-      '6 artes mensais',
-      '1 landing page simples',
-      'Suporte via WhatsApp comercial'
-    ]
-  },
-  {
-    name: 'BASIC',
-    price: 'R$497',
-    description: 'Gestão profissional para marcas em crescimento.',
+    name: 'Start Up',
+    price: 'R$ 497',
+    description: 'A fundação digital inteligente. Profissionalize sua marca e garanta presença consistente.',
     minimumContract: '3 meses',
+    ctaText: 'Começar Agora',
     features: [
-      'Social media completo',
-      '12 artes mensais',
-      '1 vídeo curto por mês',
-      'Otimização de branding',
-      'Suporte prioritário'
+      'Design Estratégico de Alto Padrão',
+      'Presença Digital Ativa (Social Media)',
+      'Setup de IA Inicial (Respostas Rápidas)',
+      'Otimização de Perfil (Bio Magnética)'
     ]
   },
   {
-    name: 'PRO',
-    price: 'R$997',
-    description: 'O mais vendido — foco em performance.',
+    name: 'Traction AI',
+    price: 'R$ 1.497',
+    description: 'Aceleração com tráfego e inteligência. Gere leads e aumente o volume de vendas.',
     isPopular: true,
     minimumContract: '3 meses',
+    ctaText: 'Escalar Vendas',
     features: [
-      'Social media completo',
-      '20 artes mensais',
-      '4 vídeos curtos',
-      'Gestão de tráfego pago (até 3 campanhas)',
-      'Ajustes ilimitados de identidade visual',
-      'Automação básica',
-      'Relatórios mensais'
+      'Tudo do plano Start Up',
+      'Gestão de Tráfego (Meta & Google)',
+      'Agente de IA Vendedor (Qualificação)',
+      'Copywriting de Alta Conversão'
     ]
   },
   {
-    name: 'ADVANCED',
-    price: 'R$1.997',
-    description: 'Para empresas que querem escala máxima.',
+    name: 'Scale Pro',
+    price: 'Sob Consulta',
+    description: 'Dominação de mercado e automação total. Liderança de nicho via tecnologia.',
     minimumContract: '3 meses',
+    ctaText: 'Falar com Especialista',
     features: [
-      'Social media completo + produção avançada',
-      '30 artes mensais',
-      '8 vídeos curtos',
-      'Tráfego pago avançado (até 6 campanhas)',
-      'Automação completa',
-      'Agente de IA personalizado',
-      'Suporte premium 24/7'
+      'Ecossistema de Marketing 360º',
+      'IA Avançada Integrada ao CRM',
+      'Websites & LPs de Alta Conversão',
+      'Consultoria Estratégica Mensal'
     ]
   }
 ];
@@ -300,7 +330,7 @@ export const CASES: CaseStudy[] = [
       { label: 'no Google Ads', value: 'Top 3' },
       { label: 'negócios gerados', value: 'R$ 420k' }
     ],
-    imageUrl: 'https://i.ibb.co/4g73w8s5/case-Advocacia.png'
+    imageUrl: 'https://i.ibb.co/1frYg2Yn/advocacia-oliveira.webp'
   },
   {
     id: 'urban-fit',
@@ -328,7 +358,7 @@ export const STATS = [
     icon: Users
   },
   {
-    value: '15M+',
+    value: '390k+',
     label: 'Gerados em Vendas',
     icon: TrendingUp
   },

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -13,7 +14,7 @@ import Cases from './components/Cases';
 import Contact from './components/Contact';
 import Stats from './components/Stats';
 import SmartSecretary from './components/SmartSecretary';
-import SmartSecretaryLP from './components/SmartSecretaryLP';
+import { InteractiveFeature } from './components/InteractiveFeature';
 import { ViewState } from './types';
 
 function App() {
@@ -29,14 +30,6 @@ function App() {
       window.scrollTo(0, 0);
     }
   }, [currentView, targetServiceId]);
-
-  useEffect(() => {
-    if (currentView === 'smart-secretary-lp') {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }, [currentView]);
 
   const handleServiceNavigation = (serviceId: string) => {
     setIsTransitioning(true);
@@ -64,10 +57,11 @@ function App() {
   const renderHome = () => (
     <>
       <Hero onCtaClick={() => handleNavNavigate('contact')} />
+      <InteractiveFeature />
       <Stats />
       <Features />
-      <SmartSecretary onNavigate={handleNavNavigate} />
       <Services onServiceClick={handleServiceNavigation} />
+      <SmartSecretary />
       <Companies />
       <Testimonials />
       <Pricing />
@@ -98,10 +92,6 @@ function App() {
       </main>
       
       <Footer />
-      
-      {currentView === 'smart-secretary-lp' && (
-        <SmartSecretaryLP onClose={() => handleNavNavigate('home')} />
-      )}
     </div>
   );
 }

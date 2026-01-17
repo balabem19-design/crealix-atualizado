@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect, useRef } from 'react';
 import { CASES, CONTACT_INFO } from '../constants';
 
@@ -139,7 +141,7 @@ const Cases: React.FC = () => {
 
          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
             <StatItem value="60%" label="Crescimento Médio" isVisible={isVisible} delay={0} />
-            <StatItem value="35k+" label="Leads Gerados" isVisible={isVisible} delay={200} />
+            <StatItem value="390k+" label="Leads Gerados" isVisible={isVisible} delay={200} />
             <StatItem value="97%" label="Satisfação" isVisible={isVisible} delay={400} />
          </div>
 

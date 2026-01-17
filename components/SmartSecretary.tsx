@@ -1,16 +1,12 @@
+
 import React from 'react';
 import { Bot, CheckCircle2, CalendarClock, Zap, ArrowRight } from 'lucide-react';
-import { ViewState } from '../types';
 import { IMAGES } from '../constants';
 
-interface SmartSecretaryProps {
-  onNavigate: (view: ViewState) => void;
-}
-
-const SmartSecretary: React.FC<SmartSecretaryProps> = ({ onNavigate }) => {
+const SmartSecretary: React.FC = () => {
 
   const handleCtaClick = () => {
-    onNavigate('smart-secretary-lp');
+    window.open('https://secretariasmart.crealixmarketing.com/', '_blank');
   };
 
   return (

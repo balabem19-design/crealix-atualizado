@@ -1,6 +1,8 @@
+
+
 import { LucideIcon } from 'lucide-react';
 
-export type ViewState = 'home' | 'services' | 'cases' | 'contact' | 'smart-secretary-lp';
+export type ViewState = 'home' | 'services' | 'cases' | 'contact';
 
 export interface Service {
   id: string;
@@ -20,16 +22,24 @@ export interface PricingPlan {
   price: string;
   description: string;
   features: string[];
+  ctaText?: string;
   isPopular?: boolean;
   highlightColor?: string;
   minimumContract?: string;
 }
 
+export interface ChatMessage {
+  from: 'me' | 'them';
+  text: string;
+  time: string;
+}
+
 export interface Testimonial {
   name: string;
   role: string;
-  content: string;
   avatarUrl: string;
+  date: string;
+  conversation: ChatMessage[];
 }
 
 export interface Feature {

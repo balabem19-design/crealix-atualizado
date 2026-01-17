@@ -8,12 +8,12 @@ interface SmartSecretaryLPProps {
   onClose: () => void;
 }
 
-// Official High-Ticket Images (Generated & Fixed)
+// Official High-Ticket Images (Updated with high-quality stock images)
 const LP_IMAGES = {
-    hero: "https://i.ibb.co/HfBw9DhH/avatar-Secretaria-Smart-1024x919.webp",
-    vehicle: "https://i.ibb.co/rvWjdc1/crealix-lp-highticket-vehicle.png",
-    process: "https://i.ibb.co/k3P5jmd/crealix-lp-highticket-process.png",
-    cta: "https://i.ibb.co/VWVf60y/crealix-lp-highticket-cta.png"
+    hero: "https://i.ibb.co/gMBSVYXr/secertaria-smart-lp.png", // Official Avatar (Keep)
+    vehicle: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80&w=800", // AI/Robot Humanoid
+    process: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800", // Dashboard/Data
+    cta: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" // Team/Success
 };
 
 const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
@@ -95,7 +95,10 @@ const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
 
           {/* 4. THE PREMIUM VEHICLE */}
           <section className="grid md:grid-cols-2 gap-12 items-center">
-              <img src={LP_IMAGES.vehicle} alt="AI Digital Attendant" className="rounded-2xl shadow-2xl"/>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                 <img src={LP_IMAGES.vehicle} alt="AI Digital Attendant" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/>
+              </div>
               <div>
                   <h2 className="text-3xl font-bold mb-4">Uma solução de elite, não um chatbot comum.</h2>
                   <ul className="space-y-3 text-lg text-gray-300">
@@ -119,12 +122,15 @@ const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
           {/* 6. HOW IT WORKS */}
           <section id="how-it-works" className="text-center">
             <h2 className="text-3xl font-bold mb-12">Processo Premium em 3 Passos</h2>
-            <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div className="grid md:grid-cols-3 gap-8 items-start mb-12">
               <Step number="1" title="Diagnóstico e Treinamento" description="Analisamos seu negócio e treinamos a IA com suas informações." />
               <Step number="2" title="Implementação Premium" description="Configuramos e integramos a Secretária Smart em seus canais." />
               <Step number="3" title="Ativação e Performance" description="Sua IA começa a vender e atender, com otimização contínua." />
             </div>
-            <img src={LP_IMAGES.process} alt="SaaS Interface" className="mt-12 rounded-lg shadow-lg" id="demo"/>
+            <div className="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-white/10" id="demo">
+               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-50"></div>
+               <img src={LP_IMAGES.process} alt="Performance Dashboard" className="w-full h-auto object-cover"/>
+            </div>
           </section>
 
           {/* 7. SOCIAL PROOF */}
@@ -167,7 +173,7 @@ const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
           </section>
 
           {/* 10. FINAL CTA */}
-          <section className="py-16 text-center bg-crealix-purple/10 rounded-2xl border border-crealix-purple/30 grid md:grid-cols-2 items-center gap-8">
+          <section className="py-16 text-center bg-crealix-purple/10 rounded-2xl border border-crealix-purple/30 grid md:grid-cols-2 items-center gap-8 overflow-hidden">
             <div>
               <h2 className="text-4xl font-black mb-4">Cada minuto sem a Secretária Smart é um cliente perdido.</h2>
               <p className="text-lg text-gray-300 mb-8">Configure hoje, atenda hoje, venda hoje.</p>
@@ -175,7 +181,10 @@ const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
                 👉 Quero minha Secretária de IA Premium
               </button>
             </div>
-            <img src={LP_IMAGES.cta} alt="AI and Human Collaboration" className="rounded-lg"/>
+            <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden border border-white/10">
+               <img src={LP_IMAGES.cta} alt="Success Collaboration" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/>
+               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
           </section>
         </main>
       </div>
