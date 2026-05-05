@@ -61,6 +61,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ targetId, onContact }) =>
                    <img 
                     src={service.imageUrl} 
                     alt={service.title} 
+                    loading="lazy"
                     className="relative w-full h-full object-contain transition-all duration-700 group-hover:scale-105 z-10 drop-shadow-[0_0_25px_rgba(0,0,0,0.5)]"
                    />
                 </div>

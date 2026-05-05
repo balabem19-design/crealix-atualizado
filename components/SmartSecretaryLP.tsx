@@ -53,6 +53,7 @@ const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
                  <img 
                     src={LP_IMAGES.hero} 
                     alt="Secretária Smart" 
+                    loading="lazy"
                     className="relative w-full h-auto object-contain drop-shadow-[0_0_40px_rgba(122,0,255,0.4)]"
                  />
               </div>
@@ -97,7 +98,7 @@ const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
           <section className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                 <img src={LP_IMAGES.vehicle} alt="AI Digital Attendant" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/>
+                 <img src={LP_IMAGES.vehicle} alt="AI Digital Attendant" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/>
               </div>
               <div>
                   <h2 className="text-3xl font-bold mb-4">Uma solução de elite, não um chatbot comum.</h2>
@@ -129,7 +130,7 @@ const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
             </div>
             <div className="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-white/10" id="demo">
                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-50"></div>
-               <img src={LP_IMAGES.process} alt="Performance Dashboard" className="w-full h-auto object-cover"/>
+               <img src={LP_IMAGES.process} alt="Performance Dashboard" loading="lazy" className="w-full h-auto object-cover"/>
             </div>
           </section>
 
@@ -182,7 +183,7 @@ const SmartSecretaryLP: React.FC<SmartSecretaryLPProps> = ({ onClose }) => {
               </button>
             </div>
             <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden border border-white/10">
-               <img src={LP_IMAGES.cta} alt="Success Collaboration" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/>
+               <img src={LP_IMAGES.cta} alt="Success Collaboration" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"/>
                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>
           </section>

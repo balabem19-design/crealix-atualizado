@@ -90,6 +90,7 @@ const Cases: React.FC = () => {
                 <img 
                   src={item.imageUrl} 
                   alt={item.client} 
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:blur-[2px] group-hover:scale-105 transition-all duration-500"
                 />
               </div>

@@ -232,7 +232,7 @@ export const PRICING_PLANS: PricingPlan[] = [
   {
     name: 'Start Up',
     price: 'R$ 497',
-    description: 'A fundação digital inteligente. Profissionalize sua marca e garanta presença consistente.',
+    description: 'Para quem precisa começar com presença profissional',
     minimumContract: '3 meses',
     ctaText: 'Começar Agora',
     features: [
@@ -240,12 +240,22 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Presença Digital Ativa (Social Media)',
       'Setup de IA Inicial (Respostas Rápidas)',
       'Otimização de Perfil (Bio Magnética)'
+    ],
+    detailedFeatures: [
+      'Criação de identidade visual básica',
+      'Planejamento de linha editorial para o mês',
+      '8 Posts mensais no feed',
+      '4 Stories mensais',
+      'Copywriting Básico',
+      'Planejamento Mensal simples',
+      'IA para atendimento Básico',
+      'Suporte Padrão via email e WhatsApp em horário comercial'
     ]
   },
   {
     name: 'Traction AI',
     price: 'R$ 1.497',
-    description: 'Aceleração com tráfego e inteligência. Gere leads e aumente o volume de vendas.',
+    description: 'Para quem quer gerar leads e vender todos os dias',
     isPopular: true,
     minimumContract: '3 meses',
     ctaText: 'Escalar Vendas',
@@ -253,13 +263,25 @@ export const PRICING_PLANS: PricingPlan[] = [
       'Tudo do plano Start Up',
       'Gestão de Tráfego (Meta & Google)',
       'Agente de IA Vendedor (Qualificação)',
-      'Copywriting de Alta Conversão'
+      'Sistema validado para gerar leads diariamente'
+    ],
+    detailedFeatures: [
+      'Inclui todas as entregas do plano Start Up',
+      '12 Posts mensais no feed',
+      '12 Stories mensais',
+      'Copywriting Avançado (vendas)',
+      'Planejamento Estratégico',
+      'Gestão de Tráfego Automática',
+      'IA vendedora para atendimento',
+      'Qualificação de leads',
+      'Automação Parcial',
+      'Suporte Prioritário'
     ]
   },
   {
     name: 'Scale Pro',
-    price: 'Sob Consulta',
-    description: 'Dominação de mercado e automação total. Liderança de nicho via tecnologia.',
+    price: 'R$ 3.997',
+    description: 'Para empresas que querem dominar seu mercado',
     minimumContract: '3 meses',
     ctaText: 'Falar com Especialista',
     features: [
@@ -267,6 +289,20 @@ export const PRICING_PLANS: PricingPlan[] = [
       'IA Avançada Integrada ao CRM',
       'Websites & LPs de Alta Conversão',
       'Consultoria Estratégica Mensal'
+    ],
+    detailedFeatures: [
+      'Ecossistema Completo de Vendas',
+      '20 Posts mensais no feed',
+      '30 Stories mensais',
+      'Copywriting de Persuasão completa',
+      'Planejamento: Estratégia + expansão',
+      'Gestão de Tráfego Avançado',
+      'IA + CRM completo para atendimento',
+      'Qualificação de leads avançada',
+      'Websites / Landing Pages Inclusos',
+      'Consultoria Estratégica Mensal',
+      'Automação Total',
+      'Suporte VIP'
     ]
   }
 ];

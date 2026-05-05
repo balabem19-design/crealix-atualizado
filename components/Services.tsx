@@ -2,6 +2,7 @@ import React from 'react';
 import { SERVICES } from '../constants';
 import { ArrowRight } from 'lucide-react';
 import { Service } from '../types';
+import { motion } from 'motion/react';
 
 interface ServicesProps {
   onServiceClick: (serviceId: string) => void;
@@ -11,18 +12,28 @@ const Services: React.FC<ServicesProps> = ({ onServiceClick }) => {
   return (
     <section id="services" className="py-24 bg-[#0A0A0F] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="text-center mb-20"
+        >
           <h2 className="text-4xl md:text-6xl font-display font-black mb-4 text-white">
             SERVIÇOS <span className="text-gradient">CREALIX</span>
           </h2>
           <p className="text-gray-400 text-lg">
             Tudo o que sua marca precisa, em um só lugar.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {SERVICES.map((service) => (
-            <div 
+          {SERVICES.map((service, index) => (
+            <motion.div 
+              initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
               key={service.id} 
               onClick={() => onServiceClick(service.id)}
               className="group relative rounded-3xl border border-white/10 bg-[#0E0E14] overflow-hidden cursor-pointer hover:border-crealix-purple/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(122,0,255,0.15)]"
@@ -33,6 +44,7 @@ const Services: React.FC<ServicesProps> = ({ onServiceClick }) => {
                  <img 
                     src={service.imageUrl} 
                     alt={service.title} 
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                  />
                  <div className="absolute top-4 left-4 z-20 w-12 h-12 rounded-xl bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center text-crealix-blue group-hover:text-crealix-pink transition-colors">
@@ -52,7 +64,7 @@ const Services: React.FC<ServicesProps> = ({ onServiceClick }) => {
                   Ver Detalhes <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

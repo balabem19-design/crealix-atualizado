@@ -22,6 +22,7 @@ export interface PricingPlan {
   price: string;
   description: string;
   features: string[];
+  detailedFeatures?: string[];
   ctaText?: string;
   isPopular?: boolean;
   highlightColor?: string;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
 import { IMAGES } from '../constants';
+import { motion } from 'motion/react';
 
 interface CtaProps {
   onContactClick: () => void;
@@ -16,18 +17,31 @@ const CallToAction: React.FC<CtaProps> = ({ onContactClick }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 items-center gap-12 lg:gap-16 relative z-10">
         
         {/* Robot Image - Desktop Only */}
-        <div className="order-2 lg:order-1 relative hidden lg:flex justify-center lg:justify-start">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="order-2 lg:order-1 relative hidden lg:flex justify-center lg:justify-start"
+        >
            <div className="relative z-10 w-[180px] sm:w-[220px] md:w-[250px]"> 
                <div className="absolute inset-0 bg-gradient-to-t from-crealix-blue/30 to-crealix-purple/30 blur-[60px] rounded-full opacity-60"></div>
                <img 
                 src={IMAGES.robot} 
                 alt="AI Robot Crealix" 
+                loading="lazy"
                 className="w-full h-auto relative z-10 drop-shadow-[0_0_30px_rgba(0,212,255,0.2)] animate-float"
                />
            </div>
-        </div>
+        </motion.div>
 
-        <div className="order-1 lg:order-2 text-center lg:text-left">
+        <motion.div 
+          initial={{ opacity: 0, x: 30, filter: 'blur(10px)' }}
+          whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="order-1 lg:order-2 text-center lg:text-left"
+        >
           
           <div className="flex flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-6">
               {/* Robot Image - Mobile Only */}
@@ -37,6 +51,7 @@ const CallToAction: React.FC<CtaProps> = ({ onContactClick }) => {
                       <img 
                           src={IMAGES.robot} 
                           alt="AI Robot Crealix" 
+                          loading="lazy"
                           className="w-full h-auto relative z-10 drop-shadow-[0_0_20px_rgba(0,212,255,0.2)] animate-float"
                       />
                   </div>
@@ -65,7 +80,7 @@ const CallToAction: React.FC<CtaProps> = ({ onContactClick }) => {
                 Resposta em até 24h • Consultoria gratuita • Sem compromisso
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

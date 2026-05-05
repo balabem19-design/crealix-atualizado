@@ -2,6 +2,7 @@
 import React from 'react';
 import { Bot, CheckCircle2, CalendarClock, Zap, ArrowRight } from 'lucide-react';
 import { IMAGES } from '../constants';
+import { motion } from 'motion/react';
 
 const SmartSecretary: React.FC = () => {
 
@@ -18,7 +19,13 @@ const SmartSecretary: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Avatar Composition */}
-          <div className="relative order-2 lg:order-1 flex justify-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative order-2 lg:order-1 flex justify-center"
+          >
              <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
                 
                 {/* 1. Main Circular Portal Background */}
@@ -39,6 +46,7 @@ const SmartSecretary: React.FC = () => {
                     <img 
                       src={IMAGES.smartSecretary.home} 
                       alt="Secretária Smart" 
+                      loading="lazy"
                       className="relative w-full h-full object-cover object-center drop-shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-105 transition-transform duration-700"
                     />
                 </div>
@@ -80,10 +88,16 @@ const SmartSecretary: React.FC = () => {
                 </div>
 
              </div>
-          </div>
+          </motion.div>
 
           {/* Copy Section */}
-          <div className="order-1 lg:order-2 text-center lg:text-left">
+          <motion.div 
+            initial={{ opacity: 0, x: 30, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="order-1 lg:order-2 text-center lg:text-left"
+          >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/30 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-6 animate-fade-in">
                 <Zap size={12} fill="currentColor" />
                 Inteligência Artificial Premium
@@ -112,7 +126,7 @@ const SmartSecretary: React.FC = () => {
                <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-100/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
             </button>
-          </div>
+          </motion.div>
 
         </div>
       </div>

@@ -6,180 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crealix Marketing - Inteligência, Design e Performance</title>
     <link rel="icon" type="image/webp" href="https://i.ibb.co/7xb7Y99j/FAVICON-Crealix.webp" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              crealix: {
-                bg: '#0A0A0F',
-                pink: '#FF00D4',
-                purple: '#7A00FF',
-                blue: '#00D4FF',
-              }
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Poppins', 'sans-serif'],
-            },
-            backgroundImage: {
-              'crealix-gradient': 'linear-gradient(to right, #00D4FF, #7A00FF, #FF00D4)',
-              'glass': 'linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)',
-            },
-            animation: {
-              'float': 'float 6s ease-in-out infinite',
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'fade-in': 'fadeIn 0.8s ease-out forwards',
-              'fade-out': 'fadeOut 0.3s ease-in forwards',
-              'slide-up': 'slideUp 0.5s ease-out forwards',
-              'slide-left': 'slideLeft 0.5s ease-out forwards',
-              'scroll': 'scroll 40s linear infinite',
-              'shimmer': 'shimmer 2s linear infinite',
-              'mist-flow': 'mistFlow 20s ease-in-out infinite alternate',
-              'beam-slide': 'beamSlide 12s linear infinite',
-              'light-trail': 'lightTrail 2s ease-in-out infinite',
-              'vibrate': 'vibrate 0.3s linear infinite',
-              'scan': 'scan 3s ease-in-out infinite',
-              'breathe': 'breathe 4s ease-in-out infinite',
-              'spin-slow': 'spin 2.5s linear infinite',
-              'spotlight': 'spotlight 2s ease .75s 1 forwards',
-              'marquee': 'marquee var(--duration) infinite linear',
-              'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
-            },
-            keyframes: {
-              marquee: {
-                'from': { transform: 'translateX(0)' },
-                'to': { transform: 'translateX(calc(-100% - var(--gap)))' }
-              },
-              'marquee-vertical': {
-                'from': { transform: 'translateY(0)' },
-                'to': { transform: 'translateY(calc(-100% - var(--gap)))' }
-              },
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
-              },
-              fadeIn: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              fadeOut: {
-                '0%': { opacity: '1', filter: 'blur(0px)' },
-                '100%': { opacity: '0', filter: 'blur(10px)' },
-              },
-              slideUp: {
-                '0%': { opacity: '0', transform: 'translateY(40px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              slideLeft: {
-                '0%': { opacity: '0', transform: 'translateX(-20px)' },
-                '100%': { opacity: '1', transform: 'translateX(0)' },
-              },
-              scroll: {
-                '0%': { transform: 'translateX(0)' },
-                '100%': { transform: 'translateX(-100%)' },
-              },
-              shimmer: {
-                '0%': { transform: 'translateX(-100%)' },
-                '100%': { transform: 'translateX(100%)' },
-              },
-              mistFlow: {
-                '0%': { transform: 'translate(0, 0) scale(1)' },
-                '100%': { transform: 'translate(20px, -15px) scale(1.1)' },
-              },
-              beamSlide: {
-                '0%': { transform: 'translateX(-100%) skewX(-20deg)', opacity: '0' },
-                '10%': { opacity: '0.5' },
-                '90%': { opacity: '0.5' },
-                '100%': { transform: 'translateX(200%) skewX(-20deg)', opacity: '0' },
-              },
-              lightTrail: {
-                '0%': { transform: 'translateY(-100%)', opacity: '0' },
-                '20%': { opacity: '0.8' },
-                '80%': { opacity: '0.8' },
-                '100%': { transform: 'translateY(100%)', opacity: '0' },
-              },
-              vibrate: {
-                '0%': { transform: 'rotate(0deg)' },
-                '25%': { transform: 'rotate(0.5deg)' },
-                '75%': { transform: 'rotate(-0.5deg)' },
-                '100%': { transform: 'rotate(0deg)' },
-              },
-              scan: {
-                '0%': { transform: 'translateY(-100%) rotate(0deg)', opacity: '0' },
-                '20%': { opacity: '0.5' },
-                '80%': { opacity: '0.5' },
-                '100%': { transform: 'translateY(200%) rotate(0deg)', opacity: '0' },
-              },
-              breathe: {
-                '0%, 100%': { boxShadow: '0 0 15px rgba(122, 0, 255, 0.1)', borderColor: 'rgba(255,255,255,0.1)' },
-                '50%': { boxShadow: '0 0 25px rgba(122, 0, 255, 0.3)', borderColor: 'rgba(122, 0, 255, 0.3)' },
-              },
-              spotlight: {
-                '0%': { opacity: 0, transform: 'translate(-72%, -62%) scale(0.5)' },
-                '100%': { opacity: 1, transform: 'translate(-50%,-40%) scale(1)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        background-color: #0A0A0F;
-        color: white;
-        overflow-x: hidden;
-        font-family: 'Inter', sans-serif;
-      }
-      
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Poppins', sans-serif;
-      }
-
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0A0A0F;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #333;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #7A00FF;
-      }
-
-      .text-gradient {
-        background: linear-gradient(to right, #00D4FF, #7A00FF, #FF00D4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      
-      /* Glassmorphism Utils */
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      .perspective-container {
-        perspective: 1000px;
-      }
-
-      [data-slot="marquee"] {
-        --duration: 40s;
-        --gap: 1rem;
-      }
-    </style>
   <script type="importmap">
 {
   "imports": {
@@ -197,9 +26,11 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>
-  </body>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
     
