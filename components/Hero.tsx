@@ -327,33 +327,30 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
         
         {/* Content Block */}
-        <div className="text-left relative">
+        <div className="text-left relative flex flex-col lg:block items-center lg:items-start text-center lg:text-left">
           
-          {/* Mobile Layout: Title + Cube */}
-          <div className="flex flex-row items-center justify-between gap-2 lg:block">
-            {/* 2.3 Destaque Cinemático no Título */}
-            <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-black leading-[1.1] mb-6 tracking-tight text-white flex-1 drop-shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-              INTELIGÊNCIA,<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D4FF] via-[#7A00FF] to-[#FF00D4] animate-pulse">DESIGN E</span><br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF00D4] to-[#7A00FF]">PERFORMANCE</span><br />
-              PARA SUA MARCA.
-            </h1>
-
-            {/* Mobile Cube */}
-            <div className="lg:hidden relative w-[100px] h-[100px] flex-shrink-0">
-                <div className="animate-float">
-                   <img 
-                       src={IMAGES.cube} 
-                       alt="Crealix 3D Cube" 
-                       className="w-full h-full object-contain relative z-10" 
-                   />
-                </div>
-            </div>
-          </div>
+          {/* Title Area */}
+          <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-black leading-[1.1] mb-6 tracking-tight text-white drop-shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+            INTELIGÊNCIA,<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D4FF] via-[#7A00FF] to-[#FF00D4] animate-pulse">DESIGN E</span><br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF00D4] to-[#7A00FF]">PERFORMANCE</span><br />
+            PARA SUA MARCA.
+          </h1>
 
           <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-8 max-w-xl leading-relaxed mr-auto lg:mx-0 font-light">
             Unimos criatividade humana e tecnologia para impulsionar negócios com automação, branding e resultados reais.
           </p>
+
+          {/* Mobile Cube - Now below text */}
+          <div className="lg:hidden relative w-[130px] h-[130px] flex-shrink-0 mb-8">
+              <div className="animate-float">
+                 <img 
+                     src={IMAGES.cube} 
+                     alt="Crealix 3D Cube" 
+                     className="w-full h-full object-contain relative z-10" 
+                 />
+              </div>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <button 
               onClick={onCtaClick}

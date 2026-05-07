@@ -20,7 +20,7 @@ export const CONTACT_INFO = {
   whatsapp: '5541988920031',
   whatsappDisplay: '(41) 98892-0031',
   email: 'contato@crealixmarketing.com',
-  instagram: 'https://www.instagram.com/crealix.marketing/'
+  instagram: 'https://www.instagram.com/crealixmarketing/'
 };
 
 // Image Assets

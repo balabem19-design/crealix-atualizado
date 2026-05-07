@@ -40,33 +40,31 @@ const CallToAction: React.FC<CtaProps> = ({ onContactClick }) => {
           whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="order-1 lg:order-2 text-center lg:text-left"
+          className="order-1 lg:order-2 text-center lg:text-left flex flex-col items-center lg:items-start"
         >
           
-          <div className="flex flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-6">
-              {/* Robot Image - Mobile Only */}
-              <div className="lg:hidden relative w-[100px] sm:w-[120px] flex-shrink-0">
-                  <div className="relative z-10">
-                      <div className="absolute inset-0 bg-gradient-to-t from-crealix-blue/30 to-crealix-purple/30 blur-[40px] rounded-full opacity-60"></div>
-                      <img 
-                          src={IMAGES.robot} 
-                          alt="AI Robot Crealix" 
-                          loading="lazy"
-                          className="w-full h-auto relative z-10 drop-shadow-[0_0_20px_rgba(0,212,255,0.2)] animate-float"
-                      />
-                  </div>
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-display font-black leading-[1] text-white">
-                VAMOS LEVAR SUA<br />
-                MARCA PARA O<br />
-                <span className="text-gradient">PRÓXIMO NÍVEL</span>
-              </h2>
-          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-display font-black leading-[1] text-white mb-6">
+            VAMOS LEVAR SUA<br />
+            MARCA PARA O<br />
+            <span className="text-gradient">PRÓXIMO NÍVEL</span>
+          </h2>
 
           <p className="text-base md:text-lg text-gray-400 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium">
             Entre em contato e descubra como unir automação, branding e performance em uma única estratégia.
           </p>
+
+          {/* Robot Image - Mobile Only - Now Below Text */}
+          <div className="lg:hidden relative w-[130px] sm:w-[150px] flex-shrink-0 mb-10">
+              <div className="relative z-10">
+                  <div className="absolute inset-0 bg-gradient-to-t from-crealix-blue/30 to-crealix-purple/30 blur-[45px] rounded-full opacity-60"></div>
+                  <img 
+                      src={IMAGES.robot} 
+                      alt="AI Robot Crealix" 
+                      loading="lazy"
+                      className="w-full h-auto relative z-10 drop-shadow-[0_0_25px_rgba(0,212,255,0.2)] animate-float"
+                  />
+              </div>
+          </div>
           <div className="flex flex-col items-center lg:items-start gap-4">
             <button 
               onClick={onContactClick}

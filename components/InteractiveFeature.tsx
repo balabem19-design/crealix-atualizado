@@ -17,7 +17,7 @@ export function InteractiveFeature() {
           
           <div className="flex h-full w-full flex-col lg:flex-row">
             {/* Left content - Adaptado para Crealix conforme o layout do prompt */}
-            <div className="flex-1 p-8 md:p-16 lg:p-20 relative z-20 flex flex-col justify-center order-2 lg:order-1">
+            <div className="flex-1 p-8 md:p-16 lg:p-20 relative z-20 flex flex-col justify-center order-1 lg:order-1">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-crealix-purple/10 border border-crealix-purple/20 text-crealix-purple text-xs font-bold uppercase tracking-widest mb-8 w-fit">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-crealix-purple opacity-75"></span>
@@ -42,7 +42,7 @@ export function InteractiveFeature() {
             </div>
 
             {/* Right content - Spline Scene com escala reduzida */}
-            <div className="flex-1 relative h-[450px] lg:h-full order-1 lg:order-2 overflow-visible">
+            <div className="flex-1 relative h-[450px] lg:h-full order-2 lg:order-2 overflow-visible">
               <SplineScene 
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                 className="w-full h-full transform scale-[0.65] md:scale-[0.8] lg:scale-[0.9] transition-transform duration-700"
